@@ -1,6 +1,6 @@
 import styles from "./hero.module.css";
 import Image from "next/image";
-import headshot from '../../assets/headshot.jpg'
+import headshot from '../../assets/headshot.JPG'
 import { Button } from "../button/Button";
 
 export function Hero() {
