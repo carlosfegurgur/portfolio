@@ -123,7 +123,6 @@ export default function Contact() {
           className={styles["form"]}
           id={styles["form"]}
           name="Contact Form"
-          data-netlify="true"
           method="POST"
         //   onSubmit={onSubmit}
         >
