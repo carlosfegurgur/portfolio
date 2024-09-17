@@ -1,67 +1,59 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { Button } from "../components/button/Button";
 import styles from "./contact.module.css";
 
 export default function Contact() {
-    // const emailAccessKey = '8f2d2e01-cf09-4e80-a1b5-05cedb60fdf4';
-    const [formData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-    })
-    // const [isSubmitted, setIsSubmitted] = useState(false);
-    // const handleChange = (e: any) => {
-    //     const { name, value } = e.target;
-    //     setFormData({
-    //       ...formData,
-    //       [name]: value
-    //     });
-    //   };
-    //   const handleSubmit = (e: any) => {
-    //     e.preventDefault();
-    //     console.log(formData); // You can replace this with an API call to send data
-    //     setIsSubmitted(true);
-    //     if (isSubmitted){
-    //         window.alert(`Thank you ${formData.name}! Your message has been sent.`)
-    //     }
-    
-    //     // Reset form
-    //     setFormData({
-    //       name: '',
-    //       email: '',
-    //       phone: '',
-    //       message: ''
-    //     });
-    //   };
+  const emailAccessKey = "8f2d2e01-cf09-4e80-a1b5-05cedb60fdf4";
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-    //   const [result, setResult] = useState("");
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-//   const onSubmit = async (e: any) => {
-//     e.preventDefault();
-//     setResult("Sending....");
-//     const formData = new FormData(e.target);
+  const [result, setResult] = useState("");
 
-//     formData.append("access_key", emailAccessKey);
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(e.target);
 
-//     const response = await fetch("https://api.web3forms.com/submit", {
-//       method: "POST",
-//       body: formData
-//     });
+    formData.append("access_key", emailAccessKey);
 
-//     const data = await response.json();
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
 
-//     if (data.success) {
-//       setResult("Form Submitted Successfully");
-//       e.target.reset();
-//     } else {
-//       console.log("Error", data);
-//       setResult(data.message);
-//     }
-//   };
+    const data = await response.json();
 
-    
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      setTimeout(() => {
+        setResult("");
+      }, 3000);
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section id={styles["contact"]}>
       <div className={styles["container"]}>
@@ -71,8 +63,9 @@ export default function Contact() {
           <p className={"text"}>
             Whether it&lsquo;s fixing an issue on your existing site, building a
             custom website from the ground up, or optimizing your web app for
-            performance, I&lsquo;m here to help bring your vision to life. Let&lsquo;s
-            collaborate on your next project—reach out and let&lsquo;s get started!
+            performance, I&lsquo;m here to help bring your vision to life.
+            Let&lsquo;s collaborate on your next project—reach out and
+            let&lsquo;s get started!
           </p>
           <ul className={styles["ul"]}>
             <li className={styles["li"]}>
@@ -124,7 +117,7 @@ export default function Contact() {
           id={styles["form"]}
           name="Contact Form"
           method="POST"
-        //   onSubmit={onSubmit}
+          onSubmit={onSubmit}
         >
           {/* <h3 className={`${styles["h"]} title`}>Get in Touch</h3> */}
           <label className={styles["label"]}>
@@ -137,7 +130,7 @@ export default function Contact() {
               id="name"
               placeholder="Name"
               value={formData.name}
-            //   onChange={handleChange}
+              onChange={handleChange}
             />
           </label>
           <label className={`${styles["label"]} ${styles["email"]}`}>
@@ -150,7 +143,7 @@ export default function Contact() {
               name="email"
               placeholder="Email"
               value={formData.email}
-            //   onChange={handleChange}
+              onChange={handleChange}
             />
           </label>
           <label className={`${styles["label"]} ${styles["phone"]}`}>
@@ -162,7 +155,7 @@ export default function Contact() {
               name="phone"
               placeholder="Phone"
               value={formData.phone}
-            //   onChange={handleChange}
+              onChange={handleChange}
             />
           </label>
           <label className={styles["label"]}>
@@ -174,10 +167,11 @@ export default function Contact() {
               id="message"
               placeholder="Write message..."
               value={formData.message}
-            //   onChange={handleChange}
+              onChange={handleChange}
             ></textarea>
           </label>
           <Button isSubmit text="Send Message" />
+          {result ? <span className="text">{result}</span> : ""}
         </form>
       </div>
     </section>
