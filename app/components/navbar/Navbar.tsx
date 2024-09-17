@@ -67,7 +67,7 @@ export function Navbar() {
           {/* <!--Mobile Nav Toggle--> */}
           <button
             onClick={handleOnClick}
-            className={`${styles["toggle"]} ${active ? styles.active : ''}`}
+            className={`${styles["toggle"]} ${active ? styles.active : ""}`}
             aria-label="mobile menu toggle"
           >
             <div className={styles.box} aria-hidden="true">
@@ -107,6 +107,14 @@ export function Navbar() {
               <li className={styles.li}>
                 <a href="/projects" className={`${styles["li-link"]}`}>
                   Projects
+                </a>
+              </li>
+              <li className={styles.li}>
+                <a
+                  href="/contact"
+                  className={`${styles["li-link"]} ${styles["mobile-only"]}`}
+                >
+                  Contact
                 </a>
               </li>
             </ul>

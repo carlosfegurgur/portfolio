@@ -36,19 +36,15 @@ export function Footer() {
                 Contact
               </a>
             </li>
-            <li className={styles.li}>
-              <a href="" className={styles.link}>
-                Blog
-              </a>
-            </li>
           </ul>
         </div>
         <div className={styles.bottom}>
           {/* <!--Social--> */}
           <ul className={styles.social}>
+            {/* Linkedin */}
             <li className={styles['social-li']}>
               <a
-                href=""
+                href="https://linkedin.com/in/cfegurgur"
                 className={styles['social-link']}
                 aria-label="facebook"
                 target="_blank"
@@ -66,31 +62,12 @@ export function Footer() {
                 />
               </a>
             </li>
+            {/* Instagram */}
             <li className={styles['social-li']}>
               <a
-                href=""
+                href="https://www.instagram.com/carlosaqf"
                 className={styles['social-link']}
                 aria-label="twitter"
-                target="_blank"
-                rel="noopener"
-              >
-                <Image
-                  className={styles['social-icon default']}
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/twitter-white.svg"
-                  alt="icon"
-                  loading="lazy"
-                  decoding="async"
-                  width="12"
-                  height="12"
-                  aria-hidden="true"
-                />
-              </a>
-            </li>
-            <li className={styles['social-li']}>
-              <a
-                href=""
-                className={styles['social-link']}
-                aria-label="instagram"
                 target="_blank"
                 rel="noopener"
               >
@@ -106,17 +83,18 @@ export function Footer() {
                 />
               </a>
             </li>
+
             <li className={styles['social-li']}>
               <a
                 href=""
                 className={styles['social-link']}
-                aria-label="youtube"
+                aria-label="instagram"
                 target="_blank"
                 rel="noopener"
               >
                 <Image
                   className={styles['social-icon default']}
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/youtube-transparent2.svg"
+                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-transparent.svg"
                   alt="icon"
                   loading="lazy"
                   decoding="async"

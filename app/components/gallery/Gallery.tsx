@@ -66,7 +66,7 @@ export const Gallery = ({ projects }: GalleryProps): ReactNode => {
     <section id={styles["gallery"]}>
       <div className={styles["container"]}>
         <div className={styles["content"]}>
-          <h2 className={styles["title"]}>Recent Projects</h2>
+          <h2 className={`${styles["title"]}`}>Recent Projects</h2>
           {/* <p className={styles.text}>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Amet minim
@@ -89,7 +89,7 @@ export const Gallery = ({ projects }: GalleryProps): ReactNode => {
             </a>
           ))}
         </div>
-        <Button isLink text="View All" href="/projects" />
+        <Button isLink text="View All" href="/projects" secondary/>
       </div>
     </section>
   ) : (

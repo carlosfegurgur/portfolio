@@ -31,6 +31,9 @@
     align-items: center;
   }
 
+  #gallery .title {
+    color: var(--primaryWhite);
+  }
   #gallery .image-group {
     width: 100%;
     display: flex;
@@ -153,6 +156,7 @@
     transition-delay: 0.2s;
   }
 }
+
 /* In Between - 600px */
 @media only screen and (min-width: 37.5rem) {
   #gallery .image-group {
@@ -174,7 +178,7 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode #gallery .title,
   body.dark-mode #gallery .text {
-    color: var(--bodyTextColorWhite);
+    color: var(--primaryWhite);
   }
   body.dark-mode #gallery .text {
     opacity: 0.8;

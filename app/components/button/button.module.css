@@ -37,10 +37,20 @@
 }
 
 .button-solid.secondary {
-    background-color: var(--primaryWhite);
-    color: var(--primaryBlack);
+  background-color: var(--primaryWhite);
+  color: var(--primaryBlack);
 }
 
 .button-solid.secondary:before {
-    background: var(--primary);
+  background: var(--primary);
+}
+
+.submit {
+  width: 100%;
+  min-width: 9.375rem;
+  border: none;
+}
+.submit:hover {
+  color: var(--primaryWhite);
+  cursor: pointer;
 }

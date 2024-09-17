@@ -53,7 +53,7 @@ p, span, a {
   text-align: inherit;
   max-width: 43.75rem;
   margin: 0 0 1rem 0;
-  color: var(--headerColor);
+  color: var(--primaryBlack);
   position: relative;
 }
 
@@ -64,7 +64,7 @@ p, span, a {
   width: 100%;
   max-width: 40.625rem;
   margin: 0;
-  color: var(--bodyTextColor);
+  color: var(--primaryBlack);
 }
 
 
@@ -76,9 +76,9 @@ p, span, a {
 @media only screen and (min-width: 0rem) {
   :root {
     /* --dark: #082032; */
-    --medium: #2c394b;
-    --accent: #334756;
-    --bodyTextColorWhite: #fafbfc;
+    /* --medium: #2c394b; */
+    /* --accent: #334756; */
+    /* --bodyTextColorWhite: #fafbfc; */
   }
   body.dark-mode {
     background-color: var(--primaryBlack);
@@ -94,7 +94,7 @@ p, span, a {
   body.dark-mode .title,
   body.dark-mode .text,
   body.dark-mode .li {
-    color: var(--bodyTextColorWhite);
+    color: var(--primaryWhite);
   }
   body.dark-mode .light {
     display: none;

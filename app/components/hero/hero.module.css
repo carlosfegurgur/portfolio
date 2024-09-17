@@ -10,7 +10,7 @@
     /* 116px - 164px top */
     /* 60px - 100px  bottom */
     padding: clamp(7.25rem, 16.82vw, 10.25rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
-    background-color: #f7f7f7;
+    background-color: var(--primaryWhite);
     /* clips the svg wave from overflowing */
     overflow: hidden;
     position: relative;
@@ -53,7 +53,7 @@
     /* 23 characters including spaces wide */
     max-width: 23ch;
     margin: 0 0 1rem 0;
-    color: var(--headerColor);
+    color: var(--primaryBlack);
     position: relative;
   }
   #hero .text {
@@ -65,7 +65,7 @@
     max-width: 33.1875rem;
     /* 28px - 40px */
     margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
-    color: var(--bodyTextColor);
+    color: var(--primaryBlack);
   }
   
   #hero .picture {
@@ -138,20 +138,20 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #hero {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--primaryBlack);
   }
   body.dark-mode #hero .title,
   body.dark-mode #hero .text,
   body.dark-mode #hero .number,
   body.dark-mode #hero .desc {
-    color: var(--bodyTextColorWhite);
+    color: var(--primaryWhite);
   }
   body.dark-mode #hero .wave path {
     fill: var(--primaryBlack);
   }
 
   body.dark-mode #hero .topper {
-    color: var(--primaryBlack);
+    color: var(--primary);
   }
 }
                                 
