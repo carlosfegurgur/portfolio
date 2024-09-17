@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { Button } from "../components/button/Button";
 import styles from "./contact.module.css";
 
@@ -12,7 +12,7 @@ export default function Contact() {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -22,10 +22,10 @@ export default function Contact() {
 
   const [result, setResult] = useState("");
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
 
     formData.append("access_key", emailAccessKey);
 
