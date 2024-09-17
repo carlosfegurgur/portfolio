@@ -4,7 +4,7 @@ import { Button } from "../components/button/Button";
 import styles from "./contact.module.css";
 
 export default function Contact() {
-    const emailAccessKey = '8f2d2e01-cf09-4e80-a1b5-05cedb60fdf4';
+    // const emailAccessKey = '8f2d2e01-cf09-4e80-a1b5-05cedb60fdf4';
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -12,54 +12,54 @@ export default function Contact() {
         message: ''
     })
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value
-        });
-      };
-      const handleSubmit = (e: any) => {
-        e.preventDefault();
-        console.log(formData); // You can replace this with an API call to send data
-        setIsSubmitted(true);
-        if (isSubmitted){
-            window.alert(`Thank you ${formData.name}! Your message has been sent.`)
-        }
+    // const handleChange = (e: any) => {
+    //     const { name, value } = e.target;
+    //     setFormData({
+    //       ...formData,
+    //       [name]: value
+    //     });
+    //   };
+    //   const handleSubmit = (e: any) => {
+    //     e.preventDefault();
+    //     console.log(formData); // You can replace this with an API call to send data
+    //     setIsSubmitted(true);
+    //     if (isSubmitted){
+    //         window.alert(`Thank you ${formData.name}! Your message has been sent.`)
+    //     }
     
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: ''
-        });
-      };
+    //     // Reset form
+    //     setFormData({
+    //       name: '',
+    //       email: '',
+    //       phone: '',
+    //       message: ''
+    //     });
+    //   };
 
-      const [result, setResult] = useState("");
+    //   const [result, setResult] = useState("");
 
-  const onSubmit = async (e: any) => {
-    e.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(e.target);
+//   const onSubmit = async (e: any) => {
+//     e.preventDefault();
+//     setResult("Sending....");
+//     const formData = new FormData(e.target);
 
-    formData.append("access_key", emailAccessKey);
+//     formData.append("access_key", emailAccessKey);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+//     const response = await fetch("https://api.web3forms.com/submit", {
+//       method: "POST",
+//       body: formData
+//     });
 
-    const data = await response.json();
+//     const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      e.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
+//     if (data.success) {
+//       setResult("Form Submitted Successfully");
+//       e.target.reset();
+//     } else {
+//       console.log("Error", data);
+//       setResult(data.message);
+//     }
+//   };
 
     
   return (
@@ -69,10 +69,10 @@ export default function Contact() {
           <span className={"topper"}>Reach Out</span>
           <h2 className={"title"}>Get in Touch</h2>
           <p className={"text"}>
-            Whether it's fixing an issue on your existing site, building a
+            Whether it&lsquo;s fixing an issue on your existing site, building a
             custom website from the ground up, or optimizing your web app for
-            performance, I'm here to help bring your vision to life. Let’s
-            collaborate on your next project—reach out and let's get started!
+            performance, I'm here to help bring your vision to life. Let&lsquo;s
+            collaborate on your next project—reach out and let&lsquo;s get started!
           </p>
           <ul className={styles["ul"]}>
             <li className={styles["li"]}>
@@ -125,7 +125,7 @@ export default function Contact() {
           name="Contact Form"
           data-netlify="true"
           method="POST"
-          onSubmit={onSubmit}
+        //   onSubmit={onSubmit}
         >
           {/* <h3 className={`${styles["h"]} title`}>Get in Touch</h3> */}
           <label className={styles["label"]}>
@@ -138,7 +138,7 @@ export default function Contact() {
               id="name"
               placeholder="Name"
               value={formData.name}
-              onChange={handleChange}
+            //   onChange={handleChange}
             />
           </label>
           <label className={`${styles["label"]} ${styles["email"]}`}>
@@ -151,7 +151,7 @@ export default function Contact() {
               name="email"
               placeholder="Email"
               value={formData.email}
-              onChange={handleChange}
+            //   onChange={handleChange}
             />
           </label>
           <label className={`${styles["label"]} ${styles["phone"]}`}>
@@ -163,7 +163,7 @@ export default function Contact() {
               name="phone"
               placeholder="Phone"
               value={formData.phone}
-              onChange={handleChange}
+            //   onChange={handleChange}
             />
           </label>
           <label className={styles["label"]}>
@@ -175,7 +175,7 @@ export default function Contact() {
               id="message"
               placeholder="Write message..."
               value={formData.message}
-              onChange={handleChange}
+            //   onChange={handleChange}
             ></textarea>
           </label>
           <Button isSubmit text="Send Message" />
