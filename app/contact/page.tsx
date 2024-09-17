@@ -5,13 +5,13 @@ import styles from "./contact.module.css";
 
 export default function Contact() {
     // const emailAccessKey = '8f2d2e01-cf09-4e80-a1b5-05cedb60fdf4';
-    const [formData, setFormData] = useState({
+    const [formData] = useState({
         name: '',
         email: '',
         phone: '',
         message: ''
     })
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const [isSubmitted, setIsSubmitted] = useState(false);
     // const handleChange = (e: any) => {
     //     const { name, value } = e.target;
     //     setFormData({
@@ -71,7 +71,7 @@ export default function Contact() {
           <p className={"text"}>
             Whether it&lsquo;s fixing an issue on your existing site, building a
             custom website from the ground up, or optimizing your web app for
-            performance, I'm here to help bring your vision to life. Let&lsquo;s
+            performance, I&lsquo;m here to help bring your vision to life. Let&lsquo;s
             collaborate on your next project—reach out and let&lsquo;s get started!
           </p>
           <ul className={styles["ul"]}>
