@@ -7,7 +7,7 @@ import { Button } from "../button/Button";
 
 export function Navbar() {
   const [active, setActive] = useState(false);
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('theme'))
+  const [darkMode, setDarkMode] = useState("light");
 
   const handleOnClick = () => {
     document.body.classList.toggle(styles.open, !active);
