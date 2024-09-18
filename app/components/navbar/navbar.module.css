@@ -10,7 +10,6 @@
   body.dark-mode #dark-mode-toggle .moon {
     transform: translate(-50%, -150%);
     opacity: 0;
-    fill: #fff;
   }
   #dark-mode-toggle {
     display: block;
@@ -38,6 +37,7 @@
   #dark-mode-toggle .moon {
     z-index: 2;
     transition: transform 0.3s, opacity 0.3s;
+    fill: var(--primaryBlack);
   }
   #dark-mode-toggle .sun {
     z-index: 1;
@@ -74,7 +74,7 @@
     padding: 0 1rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: var(--primaryBlack);
+    background-color: var(--primaryWhite);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     position: fixed;
     z-index: 10000;
@@ -157,7 +157,7 @@
     width: 100%;
     height: 5px;
     border-radius: 2px;
-    background-color: var(--primaryWhite);
+    background-color: var(--primaryBlack);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -189,7 +189,7 @@
     height: 100vh;
     padding-bottom: 2.4em;
     opacity: 0;
-    background-color: var(--primaryBlack);
+    background-color: var(--primaryWhite);
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     overflow: hidden;
     position: absolute;
@@ -254,7 +254,7 @@
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
-    color: var(--primaryWhite);
+    color: var(--primaryBlack);
     display: inline-block;
     position: relative;
     font-weight: bold;
@@ -289,10 +289,10 @@
     filter: grayscale(1) brightness(1000%);
   } */
   body.dark-mode #navigation .line {
-    background-color: #fff;
+    background-color: var(--primaryWhite);
   }
   body.dark-mode #navigation .ul-wrapper {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--primaryBlack);
   }
   body.dark-mode #navigation .li-link {
     color: var(--primaryWhite);
@@ -310,7 +310,7 @@
     padding: 0 1rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: var(--primaryBlack);
+    background-color: var(--primaryWhite);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
     position: fixed;
     z-index: 10000;
@@ -353,7 +353,7 @@
   }
 
   #navigation .logo .logo-text .mobile-logo-text {
-    color: var(--primaryWhite);
+    color: var(--primaryBlack);
   }
 
   #navigation .ul {
@@ -380,7 +380,7 @@
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
-    color: var(--primaryWhite);
+    color: var(--primaryBlack);
     display: block;
     position: relative;
   }
@@ -409,5 +409,19 @@
 
   #navigation .mobile-only {
     display: none;
+  }
+}
+
+/* Dark Mode  */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #navigation {
+    background-color: var(--primaryBlack);
+  }
+  body.dark-mode #navigation .logo .logo-text .mobile-logo-text {
+    color: var(--primaryWhite);
+  }
+
+  body.dark-mode #navigation .li-link {
+    color: var(--primaryWhite);
   }
 }
