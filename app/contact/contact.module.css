@@ -7,7 +7,7 @@
   #contact {
     padding: clamp(7.25rem, 16.82vw, 10.25rem) 1rem
       clamp(3.75rem, 7.82vw, 6.25rem);
-    background-color: var(--primaryWhite);
+    background-color: var(--primary-light);
     position: relative;
     z-index: 1;
   }
@@ -120,13 +120,13 @@
     line-height: 1.2em;
     font-weight: 700;
     margin: 0 0 0.25rem 0;
-    color: var(--primaryBlack);
+    color: var(--primary-dark);
   }
   #contact .label {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     width: 100%;
-    color: var(--primaryBlack);
+    color: var(--primary-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,8 +140,8 @@
     height: 3.5rem;
     padding: 0;
     padding-left: 1.5rem;
-    color: var(--primaryBlack);
-    background-color: var(--primaryWhite);
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
     border-radius: 0.5rem;
     border: none;
     /* prevents padding from adding to height and width */
@@ -158,8 +158,8 @@
     margin-bottom: 0.75rem;
     border-radius: 0.5rem;
     border: none;
-    background-color: var(--primaryWhite);
-    color: var(--primaryBlack);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
   }
 }
 /* Tablet - 768px */
@@ -205,7 +205,7 @@
   body.dark-mode #contact .link,
   body.dark-mode #contact .label,
   body.dark-mode #contact .h3 {
-    color: var(--primaryWhite);
+    color: var(--primary-light);
   }
   body.dark-mode #contact .contact-text,
   body.dark-mode #contact .link {
@@ -219,7 +219,7 @@
     filter: grayscale(1) brightness(1000%);
   }
   body.dark-mode #contact .form {
-    background-color: var(--primaryBlack);
+    background-color: var(--primary-dark);
   }
   body.dark-mode #contact .input {
     background-color: rgba(255, 255, 255, 0.2);
