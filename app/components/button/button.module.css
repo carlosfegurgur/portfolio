@@ -1,49 +1,25 @@
 .button-solid {
-  font-size: 1rem;
-  /* 46px - 56px */
-  line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  color: var(--primary-light);
-  min-width: 9.375rem;
-  padding: 0 1.5rem;
-  background-color: var(--primary-dark);
-  border-radius: 0.25rem;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  /* prevents padding from adding to the width */
-  box-sizing: border-box;
-  max-width: fit-content;
-}
-
-.button-solid:before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  background: var(--primary-dark);
-  opacity: 1;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 0.25rem;
-  transition: width 0.3s;
-}
-
-.button-solid:hover:before {
   width: 100%;
+  line-height: 44px;
+  box-sizing: border-box;
+  text-decoration: none;
+  
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-open-sans);
+
+  text-align: center;
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
+  border: 4px solid var(--primary-dark);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
 }
 
-.button-solid.secondary {
+.secondary {
   background-color: var(--primary-light);
   color: var(--primary-dark);
-}
-
-.button-solid.secondary:before {
-  background: var(--primary);
+  border: 4px solid var(--primary-dark);
 }
 
 .submit {

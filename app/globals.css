@@ -1,5 +1,4 @@
 :root {
-  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
   /* --primary: #CC9712;
   --lightBrand: #F4D27C;
   --darkBrand: #674D09;
@@ -12,7 +11,7 @@
   --primary-dark: #29282a;
   --lightBlack: #949296;
   --darkBlack: #141415; */
-  
+
   --neutral: var(--neutral-02);
   --neutral-dark: var(--neutral-05);
   --neutral-light: var(--neutral-01);
@@ -39,7 +38,6 @@
   --secondary-04: #194666;
   --secondary-05: #050e14;
 
-
   /* 13px - 16px */
   --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
   /* 31px - 49px */
@@ -48,13 +46,13 @@
   /* 60px - 100px top and bottom */
   --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 
-    /* number */
-    --btn-rounding: 0.75rem;
-    --nav-padding-left-right: 1rem;
-    --nav-list-spacing: 1.25rem;
-    --btn-padding: 1.5rem;
-    --nav-padding-top-bottom: 1.5rem;
-    --spacing-default-spacing: 1rem;
+  /* number */
+  --btn-rounding: 0.75rem;
+  --nav-padding-left-right: 1rem;
+  --nav-list-spacing: 1.25rem;
+  --btn-padding: 1.5rem;
+  --nav-padding-top-bottom: 1.5rem;
+  --spacing-default-spacing: 1rem;
 }
 
 body {
@@ -62,15 +60,23 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-montserrat);
 }
 
-p, span, a {
+p,
+span,
+a {
   font-family: var(--font-open-sans);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   /* prevents padding from affecting height and width */
   box-sizing: border-box;
 }
@@ -80,7 +86,7 @@ p, span, a {
   line-height: 1.2em;
   text-transform: uppercase;
   text-align: inherit;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.25rem;
@@ -107,7 +113,6 @@ p, span, a {
   margin: 0;
   color: var(--primary-dark);
 }
-
 
 /* Add this as it's own dark.css file and linked on all pages */
 /*-- -------------------------- -->
@@ -186,17 +191,14 @@ p, span, a {
   }
   #dark-mode-toggle .moon {
     z-index: 2;
-    transition: transform 0.3s,
-                opacity 0.3s,
-                fill 0.3s;
+    transition: transform 0.3s, opacity 0.3s, fill 0.3s;
     fill: #000;
   }
   #dark-mode-toggle .sun {
     z-index: 1;
     transform: translate(-50%, 100%);
     opacity: 0;
-    transition: transform 0.3s,
-                opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
   }
 }
 /* Desktop */
@@ -214,4 +216,3 @@ p, span, a {
     /* fill: #fff; */
   }
 }
-                                
