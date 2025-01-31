@@ -31,6 +31,7 @@ export function Hero() {
           aria-hidden="true"
           decoding="async"
           src={headshotNoBg}
+          priority={true}
           alt="Carlos Fegurgur standing in front of a wall smiling"
         />
       </picture>
