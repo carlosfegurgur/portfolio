@@ -1,11 +1,42 @@
 :root {
-  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-  --primary: #CC9712;
-  --primaryLight: #f1c40f;
-  --accent: #1247CB;
-  --accentLight: #245DEC;
-  --primaryWhite: #f2f2f2;
-  --primaryBlack: #29282a;
+  /* --primary: #CC9712;
+  --lightBrand: #F4D27C;
+  --darkBrand: #674D09;
+  --primaryAccent: #508991;
+  --lightAccent: #A3C7CC;
+  --darkAccent: #284548;
+  --primary-light: #f2f2f2;
+  --lightWhite: #F9F9F9;
+  --darkWhite: #797979;
+  --primary-dark: #29282a;
+  --lightBlack: #949296;
+  --darkBlack: #141415; */
+
+  --neutral: var(--neutral-02);
+  --neutral-dark: var(--neutral-05);
+  --neutral-light: var(--neutral-01);
+  --primary: var(--primary-03);
+  --primary-dark: var(--primary-05);
+  --primary-light: var(--primary-01);
+  --secondary: var(--secondary-04);
+  --secondary-dark: var(--secondary-05);
+  --secondary-light: var(--secondary-01);
+
+  --neutral-01: #f3f2f2;
+  --neutral-02: #c2c0bc;
+  --neutral-03: #868279;
+  --neutral-04: #43413d;
+  --neutral-05: #0d0d0c;
+  --primary-01: #fef6e7;
+  --primary-02: #f8d386;
+  --primary-03: #f1a70e;
+  --primary-04: #795407;
+  --primary-05: #181101;
+  --secondary-01: #ebf3fa;
+  --secondary-02: #99c5e5;
+  --secondary-03: #338bcc;
+  --secondary-04: #194666;
+  --secondary-05: #050e14;
 
   /* 13px - 16px */
   --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -14,6 +45,14 @@
   --bodyFontSize: 1rem;
   /* 60px - 100px top and bottom */
   --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+  /* number */
+  --btn-rounding: 0.75rem;
+  --nav-padding-left-right: 1rem;
+  --nav-list-spacing: 1.25rem;
+  --btn-padding: 1.5rem;
+  --nav-padding-top-bottom: 1.5rem;
+  --spacing-default-spacing: 1rem;
 }
 
 body {
@@ -21,15 +60,23 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-montserrat);
 }
 
-p, span, a {
+p,
+span,
+a {
   font-family: var(--font-open-sans);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   /* prevents padding from affecting height and width */
   box-sizing: border-box;
 }
@@ -39,7 +86,7 @@ p, span, a {
   line-height: 1.2em;
   text-transform: uppercase;
   text-align: inherit;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 0.25rem;
@@ -53,7 +100,7 @@ p, span, a {
   text-align: inherit;
   max-width: 43.75rem;
   margin: 0 0 1rem 0;
-  color: var(--primaryBlack);
+  color: var(--primary-dark);
   position: relative;
 }
 
@@ -64,9 +111,8 @@ p, span, a {
   width: 100%;
   max-width: 40.625rem;
   margin: 0;
-  color: var(--primaryBlack);
+  color: var(--primary-dark);
 }
-
 
 /* Add this as it's own dark.css file and linked on all pages */
 /*-- -------------------------- -->
@@ -81,7 +127,7 @@ p, span, a {
     /* --bodyTextColorWhite: #fafbfc; */
   }
   body.dark-mode {
-    background-color: var(--primaryBlack);
+    background-color: var(--primary-dark);
   }
   body.dark-mode p,
   body.dark-mode li,
@@ -94,7 +140,7 @@ p, span, a {
   body.dark-mode .title,
   body.dark-mode .text,
   body.dark-mode .li {
-    color: var(--primaryWhite);
+    color: var(--primary-light);
   }
   body.dark-mode .light {
     display: none;
@@ -145,17 +191,14 @@ p, span, a {
   }
   #dark-mode-toggle .moon {
     z-index: 2;
-    transition: transform 0.3s,
-                opacity 0.3s,
-                fill 0.3s;
+    transition: transform 0.3s, opacity 0.3s, fill 0.3s;
     fill: #000;
   }
   #dark-mode-toggle .sun {
     z-index: 1;
     transform: translate(-50%, 100%);
     opacity: 0;
-    transition: transform 0.3s,
-                opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
   }
 }
 /* Desktop */
@@ -173,4 +216,3 @@ p, span, a {
     /* fill: #fff; */
   }
 }
-                                

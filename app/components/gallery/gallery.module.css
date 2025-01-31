@@ -9,7 +9,7 @@
     position: relative;
     /* Prevents overflow from the image going off screen */
     overflow: hidden;
-    background-color: var(--primaryBlack);
+    background-color: var(--primary);
   }
   #gallery .container {
     width: 100%;
@@ -32,7 +32,7 @@
   }
 
   #gallery .title {
-    color: var(--primaryWhite);
+    color: var(--primary-light);
   }
   #gallery .image-group {
     width: 100%;
@@ -87,7 +87,7 @@
     width: 100%;
     height: 100%;
     padding: 1em;
-    background-color: var(--primary);
+    background-color: var(--primary-light);
     opacity: 0;
     position: absolute;
     display: flex;
@@ -178,9 +178,12 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode #gallery .title,
   body.dark-mode #gallery .text {
-    color: var(--primaryWhite);
+    color: var(--primary-light);
   }
   body.dark-mode #gallery .text {
     opacity: 0.8;
+  }
+  body.dark-mode #gallery .hover-box {
+    background-color: var(--primary-dark);
   }
 }

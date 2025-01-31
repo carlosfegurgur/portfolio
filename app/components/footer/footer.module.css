@@ -49,7 +49,7 @@
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
-        color: var(--primaryWhite);
+        color: var(--primary-light);
         display: block;
         transition: color 0.3s;
     }
@@ -87,7 +87,7 @@
     #footer .social-link {
         width: 2rem;
         height: 2rem;
-        background-color: var(--primaryBlack);
+        background-color: var(--primary-dark);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -111,7 +111,7 @@
         font-size: 1rem;
         line-height: 1.5em;
         margin: 0;
-        color: var(--primaryWhite);
+        color: var(--primary-light);
         display: block;
     }
     #footer .copyright-link {
@@ -139,7 +139,7 @@
         display: block;
         height: 100%;
         width: 100%;
-        background: var(--primaryBlack);
+        background: var(--primary-dark);
         /* opacity: 0.96; */
         top: 0;
         left: 0;

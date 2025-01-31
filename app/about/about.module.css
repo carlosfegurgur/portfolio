@@ -7,7 +7,7 @@
     /* 60px - 100px  bottom */
     padding: clamp(7.25rem, 16.82vw, 10.25rem) 1rem
       clamp(3.75rem, 7.82vw, 6.25rem);
-    background-color: var(--primaryWhite);
+    background-color: var(--primary-light);
   }
 
   #about .container {
@@ -48,7 +48,7 @@
     /* 23 characters including spaces wide */
     max-width: 23ch;
     margin: 0 0 1rem 0;
-    color: var(--primaryBlack);
+    color: var(--primary-dark);
     position: relative;
   }
   #about .text {
@@ -60,7 +60,7 @@
     max-width: 33.1875rem;
     /* 28px - 40px */
     margin: 0 0 clamp(1.75rem, 3.92vw, 2.5rem) 0;
-    color: var(--primaryBlack);
+    color: var(--primary-dark);
   }
 
   #about .picture {
