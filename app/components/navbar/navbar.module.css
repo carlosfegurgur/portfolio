@@ -293,6 +293,11 @@
     position: relative;
     font-family: var(--font-montserrat);
     font-weight: 600;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  #navigation .li-link:hover {
+    transform: scale(105%);
   }
 
   #navigation .li-link:hover:before {

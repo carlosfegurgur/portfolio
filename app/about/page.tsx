@@ -1,8 +1,14 @@
 import styles from "./about.module.css";
 import { Button } from "../components/button/Button";
 import Image from "next/image";
+import BookCard from "../components/bookCard/BookCard";
+import SkeletonBookCard from "../components/skeletonCard/SkeletonCard";
+import { getCurrentBooks, getRecentBooks } from "../utils/notionApi";
 
-export default function About() {
+export default async function About() {
+  const currentReadBookshelf = await getCurrentBooks();
+  const recentReadBookshelf = await getRecentBooks(6);
+
   return (
     <section id={styles["about"]}>
       <div className={styles["container"]}>
@@ -16,18 +22,26 @@ export default function About() {
             offer feedback and support from start to finish, taking your ideas
             from concept to code to complete.
           </p>
-          <Button isLink text="Get In Touch" href="/contact" />
-          {/* <!--Hero Image--> */}
-          <picture className={styles["picture"]}>
-            <Image
-              aria-hidden="true"
-              decoding="async"
-              src="https://picsum.photos/1900"
-              alt="Carlos Fegurgur standing in front of a wall smiling"
-              width={2000}
-              height={2000}
-            />
-          </picture>
+          <div className={styles['btn-container']}>
+            <Button href="/projects">See my Work</Button>
+            <Button href="/contact">Get in Touch</Button>
+          </div>
+        </div>
+        <div className={styles["bookshelf"]}>
+          <h1 className={styles[""]}>Currently Reading</h1>
+          {/* BOOKSHELF COMPONENT */}
+          <div className={styles["bookshelf-grid"]}>
+            {currentReadBookshelf.map((book: any, index: number) => (
+              <BookCard book={book} key={index} />
+            ))}
+          </div>
+          <h1 className={styles[""]}>Recently Read</h1>
+          {/* BOOKSHELF COMPONENT */}
+          <div className={styles["bookshelf-grid"]}>
+            {recentReadBookshelf.map((book: any, index: number) => (
+              <BookCard book={book} key={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

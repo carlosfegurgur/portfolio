@@ -89,7 +89,7 @@ export const Gallery = ({ projects }: GalleryProps): ReactNode => {
             </a>
           ))}
         </div>
-        <Button isLink text="View All" href="/projects" secondary/>
+        <Button href="/projects">View All</Button>
       </div>
     </section>
   ) : (

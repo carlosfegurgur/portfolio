@@ -1,17 +1,4 @@
 :root {
-  /* --primary: #CC9712;
-  --lightBrand: #F4D27C;
-  --darkBrand: #674D09;
-  --primaryAccent: #508991;
-  --lightAccent: #A3C7CC;
-  --darkAccent: #284548;
-  --primary-light: #f2f2f2;
-  --lightWhite: #F9F9F9;
-  --darkWhite: #797979;
-  --primary-dark: #29282a;
-  --lightBlack: #949296;
-  --darkBlack: #141415; */
-
   --neutral: var(--neutral-02);
   --neutral-dark: var(--neutral-05);
   --neutral-light: var(--neutral-01);

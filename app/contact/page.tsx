@@ -170,7 +170,7 @@ export default function Contact() {
               onChange={handleChange}
             ></textarea>
           </label>
-          <Button isSubmit text="Send Message" />
+          <Button type="submit">Send Message</Button>
           {result ? <span className="text">{result}</span> : ""}
         </form>
       </div>
