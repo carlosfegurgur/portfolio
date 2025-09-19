@@ -6,25 +6,6 @@ import SkeletonBookCard from "../components/skeletonCard/SkeletonCard";
 import { getCurrentBooks, getRecentBooks } from "../utils/notionApi";
 import { Book } from "../components/bookCard/BookCard";
 
-type Book = {
-  properties: {
-    Title: { title: [{ plain_text: string }] };
-    Author: { rich_text: [{ plain_text: string }] };
-    "My Rating": { number: number };
-    Genre: { multi_select: [{ name: string }] };
-    "Goodreads Link": { url: string }
-
-  };
-  cover: {
-    external: { url: string };
-  };
-};
-
-type BookCardProps = {
-  book: Book;
-};
-
-
 export default async function About() {
   const currentReadBookshelf = await getCurrentBooks();
   const recentReadBookshelf = await getRecentBooks(6);
