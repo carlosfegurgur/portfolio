@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./BookCard.module.css";
 import { Button } from "../button/Button";
 
-type Book = {
+export type Book = {
   properties: {
     Title: { title: [{ plain_text: string }] };
     Author: { rich_text: [{ plain_text: string }] };
@@ -16,7 +16,7 @@ type Book = {
   };
 };
 
-type BookCardProps = {
+export type BookCardProps = {
   book: Book;
 };
 

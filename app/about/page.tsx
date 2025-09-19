@@ -4,25 +4,7 @@ import Image from "next/image";
 import BookCard from "../components/bookCard/BookCard";
 import SkeletonBookCard from "../components/skeletonCard/SkeletonCard";
 import { getCurrentBooks, getRecentBooks } from "../utils/notionApi";
-
-type Book = {
-  properties: {
-    Title: { title: [{ plain_text: string }] };
-    Author: { rich_text: [{ plain_text: string }] };
-    "My Rating": { number: number };
-    Genre: { multi_select: [{ name: string }] };
-    "Goodreads Link": { url: string }
-
-  };
-  cover: {
-    external: { url: string };
-  };
-};
-
-type BookCardProps = {
-  book: Book;
-};
-
+import { Book } from "../components/bookCard/BookCard";
 
 export default async function About() {
   const currentReadBookshelf = await getCurrentBooks();
@@ -50,10 +32,9 @@ export default async function About() {
           <h1 className={styles[""]}>Currently Reading</h1>
           {/* BOOKSHELF COMPONENT */}
           <div className={styles["bookshelf-grid"]}>
-            {currentReadBookshelf.map((book: Book, index: number) => {
-              {console.log('book', book)}
-              (<BookCard book={book} key={index} />
-            )})}
+            {currentReadBookshelf.map((book: Book, index: number) => (
+              <BookCard book={book} key={index} />
+            ))}
           </div>
           <h1 className={styles[""]}>Recently Read</h1>
           {/* BOOKSHELF COMPONENT */}
