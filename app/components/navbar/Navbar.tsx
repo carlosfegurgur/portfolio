@@ -98,16 +98,16 @@ export function Navbar() {
           </ul>
         </div>
         {/* Dark Mode toggle */}
-        {/* <button
+        <button
           id={styles["dark-mode-toggle"]}
           aria-label="dark mode toggle"
           onClick={handleDarkModeToggle}
         >
           <Image className={`${styles.moon} ${styles.img}`} src={moonIcon} alt="moon icon" />
           <Image className={styles.sun} src={sunIcon} alt="sun icon" />
-        </button> */}
+        </button>
         {/* <!--Mobile Nav Toggle--> */}
-        {/* <button
+        <button
           onClick={handleOnClick}
           className={`${styles["toggle"]} ${active ? styles.active : ""}`}
           aria-label="mobile menu toggle"
@@ -126,7 +126,7 @@ export function Navbar() {
               aria-hidden="true"
             ></span>
           </div>
-        </button> */}
+        </button>
       </nav>
     </header>
   );
