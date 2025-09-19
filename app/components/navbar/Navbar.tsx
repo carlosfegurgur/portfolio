@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 import heroStyles from "../hero/hero.module.css";
 import galleryStyles from "../gallery/gallery.module.css";
+import buttonStyles from '../button/button.module.css';
 import Image from "next/image";
 import moonIcon from "../../assets/moonIcon.svg";
 import sunIcon from "../../assets/sunIcon.svg";
@@ -20,6 +21,7 @@ export function Navbar() {
     document.body.classList.add(styles["dark-mode"]);
     document.body.classList.add(heroStyles["dark-mode"]);
     document.body.classList.add(galleryStyles["dark-mode"]);
+    document.body.classList.add(buttonStyles["dark-mode"]);
     localStorage.setItem("theme", "dark");
     setDarkMode("dark");
   };
@@ -27,6 +29,7 @@ export function Navbar() {
     document.body.classList.remove(styles["dark-mode"]);
     document.body.classList.remove(heroStyles["dark-mode"]);
     document.body.classList.remove(galleryStyles["dark-mode"]);
+    document.body.classList.remove(buttonStyles["dark-mode"]);
     localStorage.setItem("theme", "light");
     setDarkMode("light");
   };
@@ -76,9 +79,6 @@ export function Navbar() {
             aria-expanded={`${active ? "true" : "false"}`}
           >
             <li className={styles.li}>
-              <a href="/" className={`${styles["li-link"]}`}>
-                Home
-              </a>
             </li>
             <li className={styles.li}>
               <a href="/about" className={`${styles["li-link"]}`}>
@@ -98,16 +98,16 @@ export function Navbar() {
           </ul>
         </div>
         {/* Dark Mode toggle */}
-        <button
+        {/* <button
           id={styles["dark-mode-toggle"]}
           aria-label="dark mode toggle"
           onClick={handleDarkModeToggle}
         >
           <Image className={`${styles.moon} ${styles.img}`} src={moonIcon} alt="moon icon" />
           <Image className={styles.sun} src={sunIcon} alt="sun icon" />
-        </button>
+        </button> */}
         {/* <!--Mobile Nav Toggle--> */}
-        <button
+        {/* <button
           onClick={handleOnClick}
           className={`${styles["toggle"]} ${active ? styles.active : ""}`}
           aria-label="mobile menu toggle"
@@ -126,7 +126,7 @@ export function Navbar() {
               aria-hidden="true"
             ></span>
           </div>
-        </button>
+        </button> */}
       </nav>
     </header>
   );

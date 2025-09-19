@@ -1,6 +1,9 @@
 import styles from "./footer.module.css";
 import Image from "next/image";
 import cfLogo from "../../assets/cfLogo.svg"
+import githubIcon from '../../assets/github.svg'
+import instagramIcon from '../../assets/instagram.svg'
+import linkedinIcon from '../../assets/linkedin.svg'
 
 export function Footer() {
 
@@ -13,7 +16,6 @@ export function Footer() {
               className={styles['logo-img']}
               loading="lazy"
               decoding="async"
-            //   src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos/charity-logo.svg"
               src={cfLogo}
               alt="logo"
               width="168"
@@ -51,13 +53,13 @@ export function Footer() {
                 rel="noopener"
               >
                 <Image
-                  className={styles['social-icon default']}
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/facebook-white.svg"
+                  className={styles['social-icon']}
+                  src={linkedinIcon}
                   alt="icon"
                   loading="lazy"
                   decoding="async"
-                  width="12"
-                  height="12"
+                  width="24"
+                  height="24"
                   aria-hidden="true"
                 />
               </a>
@@ -72,55 +74,47 @@ export function Footer() {
                 rel="noopener"
               >
                 <Image
-                  className={styles['social-icon default']}
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-transparent.svg"
+                  className={styles['social-icon']}
+                  src={instagramIcon}
                   alt="icon"
                   loading="lazy"
                   decoding="async"
-                  width="12"
-                  height="12"
+                  width="24"
+                  height="24"
                   aria-hidden="true"
                 />
               </a>
             </li>
-
+            {/* Github */}
             <li className={styles['social-li']}>
               <a
-                href=""
+                href="https://www.github.com/carlosfegurgur"
                 className={styles['social-link']}
                 aria-label="instagram"
                 target="_blank"
                 rel="noopener"
               >
                 <Image
-                  className={styles['social-icon default']}
-                  src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-transparent.svg"
+                  className={styles['social-icon']}
+                  src={githubIcon}
                   alt="icon"
                   loading="lazy"
                   decoding="async"
-                  width="12"
-                  height="12"
+                  width="24"
+                  height="24"
                   aria-hidden="true"
                 />
               </a>
             </li>
           </ul>
           <span className={styles.copyright}>
-            © {new Date().getFullYear()} -{" "}
+            © Copyright {new Date().getFullYear()} -{" "}
             <a href="" className={styles['copyright-link']}>
               Carlos Fegurgur
             </a>
           </span>
         </div>
       </div>
-      {/* <!--Background--> */}
-      <picture className={styles.background}>
-      {/* <!--Mobile Image--> */}
-        {/* <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/kids2.jpg" /> */}
-      {/* <!--Tablet and above Image--> */}
-        {/* <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/kids2.jpg"> */}
-        {/* <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/kids2.jpg" alt="kids" width="1280" height="568"/> */}
-      </picture>
     </footer>
   );
 }

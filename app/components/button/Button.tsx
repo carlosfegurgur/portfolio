@@ -1,37 +1,75 @@
 import styles from "./button.module.css";
 
-interface ButtonProps {
-  isLink?: boolean;
-  isSubmit?: boolean;
-  text?: string;
+type ButtonProps = {
+  children: React.ReactNode;
+  className?: string;
+  styleClassName?: string;
+  variant?: "primary" | "secondary" | "outline";
+  size?: "small" | "medium" | "large";
+  animation?: "slide-right" | "slide-left" | "slide-down" | "slide-up" | "none";
   href?: string;
-  secondary?: boolean;
-}
+  target?: string;
+  rel?: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
+  disabled?: boolean;
+};
 
 export function Button({
-  isLink,
-  isSubmit,
-  text,
+  children,
+  className = "",
+  styleClassName = "",
+  variant = "primary",
+  size = "medium",
+  animation = "none",
   href,
-  secondary,
+  target,
+  rel,
+  type = "button",
+  onClick,
+  disabled = false,
+  ...rest
 }: ButtonProps) {
-  return isLink ? (
-    <a
-      href={href ? href : "/"}
-      className={`${styles["button-solid"]} ${
-        secondary ? styles.secondary : ""
-      }`}
-    >
-      {text}
-    </a>
-  ) : isSubmit ? (
+  const buttonClassnames = [
+    styles.button,
+    styles[variant],
+    styles[size],
+    styles[animation],
+    styles[styleClassName],
+    disabled ? styles.disabled : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={buttonClassnames}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : rel}
+        onClick={onClick}
+        {...rest}
+      >
+        <span className={styles.buttonContent}>
+          {children}
+        </span>
+      </a>
+    );
+  }
+  return (
     <button
-      className={`${styles["button-solid"]} ${styles["submit"]}`}
-      type="submit"
+      type={type}
+      className={buttonClassnames}
+      onClick={onClick}
+      disabled={disabled}
+      {...rest}
     >
-      {text}
+      <span className={styles.buttonContent}>
+        {children}
+      </span>
     </button>
-  ) : (
-    <button className={styles["button-solid"]}>{text}</button>
   );
 }
