@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./BookCard.module.css";
 import { Button } from "../button/Button";
 
-type Book = {
+export type Book = {
   properties: {
     Title: { title: [{ plain_text: string }] };
     Author: { rich_text: [{ plain_text: string }] };
@@ -16,7 +16,7 @@ type Book = {
   };
 };
 
-type BookCardProps = {
+export type BookCardProps = {
   book: Book;
 };
 
@@ -39,7 +39,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         <div className={styles['card-header']}>
           <h3 className={styles["card-title"]}>{title}</h3>
           {rating > 0 ? <h3 className={styles["card-rating"]}>{`${rating} ⭐️`}</h3> : null}
-          {new Array(rating).map((star) => console.log(star))}
         </div>
         <div className={styles["card-footer"]}>
           <div>

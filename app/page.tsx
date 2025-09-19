@@ -23,7 +23,7 @@ export default function Home() {
         </p>
         <p>
           I’m always looking for opportunities to contribute to meaningful
-          digital products—whether that's through full-time roles or freelance
+          digital products—whether that&lsquo;s through full-time roles or freelance
           work. My goal is to bring clarity and care to everything I build,
           helping teams and clients create intuitive, performant interfaces that
           people enjoy using.

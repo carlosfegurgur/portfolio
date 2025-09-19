@@ -5,7 +5,7 @@ import { Button } from "../button/Button";
 
 interface SectionProps {
   name: string;
-  style?: Object
+  style?: object
   children?: ReactNode;
 }
 export const Section = ({ name, style, children }: SectionProps): ReactNode => {
