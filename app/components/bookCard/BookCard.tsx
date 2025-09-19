@@ -39,7 +39,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         <div className={styles['card-header']}>
           <h3 className={styles["card-title"]}>{title}</h3>
           {rating > 0 ? <h3 className={styles["card-rating"]}>{`${rating} ⭐️`}</h3> : null}
-          {new Array(rating).map((star) => console.log(star))}
         </div>
         <div className={styles["card-footer"]}>
           <div>
