@@ -8,8 +8,7 @@ export type Book = {
     Author: { rich_text: [{ plain_text: string }] };
     "My Rating": { number: number };
     Genre: { multi_select: [{ name: string }] };
-    "Goodreads Link": { url: string }
-
+    "Goodreads Link": { url: string };
   };
   cover: {
     external: { url: string };
@@ -26,7 +25,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   const rating = book.properties["My Rating"]?.number;
   const categories = book.properties.Genre?.multi_select;
   const coverImage = book.cover?.external?.url;
-  const reviewLink = book.properties['Goodreads Link'].url;
+  const reviewLink = book.properties["Goodreads Link"].url;
 
   return (
     <article className={styles["book-card"]}>
@@ -35,21 +34,26 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         style={{ backgroundImage: `url(${coverImage})` }}
       ></div>
       <div className={styles["card-content"]}>
-        <span className={styles["card-author"]}>{author}</span>
-        <div className={styles['card-header']}>
-          <h3 className={styles["card-title"]}>{title}</h3>
-          {rating > 0 ? <h3 className={styles["card-rating"]}>{`${rating} ⭐️`}</h3> : null}
+        <div className={styles["card-header"]}>
+          <span className={styles["card-author"]}>{author}</span>
+          {reviewLink ? (
+            <a href={reviewLink} className={styles["card-title-link"]}>
+              <h3 className={styles["card-title"]}>{title}</h3>
+            </a>
+          ) : (
+            <h3 className={styles["card-title"]}>{title}</h3>
+          )}
         </div>
         <div className={styles["card-footer"]}>
-          <div>
-            {categories.map((category, index) => (
-              <span key={index} className={styles["card-category"]}>
-                {category.name}
-              </span>
-            ))}
-          </div>
+          {rating > 0 ? (
+            <span className={styles["card-rating"]}>{`${rating} ⭐️`}</span>
+          ) : null}
+          {categories.map((category, index) => (
+            <span key={index} className={styles["card-category"]}>
+              {category.name}
+            </span>
+          ))}
         </div>
-        {reviewLink ? <Button href={reviewLink} target="_blank">Review</Button> : null}
       </div>
     </article>
   );

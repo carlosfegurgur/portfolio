@@ -103,6 +103,11 @@
     /* max-width: 80rem; */
     /* margin: auto; */
   }
+
+  #about .btn-container {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 680px) {
