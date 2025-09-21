@@ -128,7 +128,6 @@ export default function Contact() {
               type="text"
               name="name"
               id="name"
-              placeholder="Name"
               value={formData.name}
               onChange={handleChange}
             />
@@ -141,7 +140,6 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
-              placeholder="Email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -153,7 +151,6 @@ export default function Contact() {
               type="number"
               id="phone"
               name="phone"
-              placeholder="Phone"
               value={formData.phone}
               onChange={handleChange}
             />
@@ -165,7 +162,6 @@ export default function Contact() {
               required
               name="message"
               id="message"
-              placeholder="Write message..."
               value={formData.message}
               onChange={handleChange}
             ></textarea>
