@@ -23,19 +23,22 @@ export default async function About() {
             offer feedback and support from start to finish, taking your ideas
             from concept to code to complete.
           </p>
-          <div className={styles['btn-container']}>
+          <div className={styles["btn-container"]}>
             <Button href="/projects">See my Work</Button>
             <Button href="/contact">Get in Touch</Button>
           </div>
         </div>
         <div className={styles["bookshelf"]}>
-          <h1 className={styles[""]}>Currently Reading</h1>
-          {/* BOOKSHELF COMPONENT */}
-          <div className={styles["bookshelf-grid"]}>
-            {currentReadBookshelf.map((book: Book, index: number) => (
-              <BookCard book={book} key={index} />
-            ))}
-          </div>
+          {currentReadBookshelf.length > 0 && (
+            <>
+              <h1 className={styles[""]}>Currently Reading</h1>
+              <div className={styles["bookshelf-grid"]}>
+                {currentReadBookshelf.map((book: Book, index: number) => (
+                  <BookCard book={book} key={index} />
+                ))}
+              </div>
+            </>
+          )}
           <h1 className={styles[""]}>Recently Read</h1>
           {/* BOOKSHELF COMPONENT */}
           <div className={styles["bookshelf-grid"]}>
