@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat, openSans } from "./fonts";
-import { Navbar } from "./components/navbar/Navbar";
-import { Footer } from "./components/footer/Footer";
+import { Navbar } from "./components/layout/index";
+import { Footer } from "./components/layout/index";
+import { ThemeProvider } from "./context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Carlos Fegurgur | Frontend Developer",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
