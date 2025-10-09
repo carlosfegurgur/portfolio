@@ -1,0 +1,33 @@
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--text-primary);
+}
+
+.footer p {
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a svg {
+  transition: all 0.3s ease;
+}
+
+.socials a svg:hover {
+  stroke: var(--primary-500);
+}
+
+@media only screen and (min-width: 48rem) {
+  .footer {
+    flex-direction: row;
+  }
+}
