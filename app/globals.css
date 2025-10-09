@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --neutral: var(--neutral-02);
   --neutral-dark: var(--neutral-05);
   --neutral-light: var(--neutral-01);
@@ -23,51 +23,39 @@
   --secondary-02: #99c5e5;
   --secondary-03: #338bcc;
   --secondary-04: #194666;
-  --secondary-05: #050e14;
+  --secondary-05: #050e14; */
 
   /* 13px - 16px */
-  --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+  /* --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem); */
   /* 31px - 49px */
-  --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-  --bodyFontSize: 1rem;
+  /* --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem); */
+  /* --bodyFontSize: 1rem; */
   /* 60px - 100px top and bottom */
-  --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  /* --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem; */
 
   /* number */
-  --btn-rounding: 0.75rem;
-  --nav-padding-left-right: 1rem;
-  --nav-list-spacing: 1.25rem;
-  --btn-padding: 1.5rem;
-  --nav-padding-top-bottom: 1.5rem;
-  --spacing-default-spacing: 1rem;
+  /* --btn-rounding: 0.75rem; */
+  /* --nav-padding-left-right: 1rem; */
+  /* --nav-list-spacing: 1.25rem; */
+  /* --btn-padding: 1.5rem; */
+  /* --nav-padding-top-bottom: 1.5rem; */
+  /* --spacing-default-spacing: 1rem; */
+/* } */
+
+/* [data-theme="light"] {
+  --bg-primary: var(--primary-01);
+  --text-primary: var(--primary-05);
+  --bg-secondary: var(--primary-02);
+  --text-secondary: var(--primary-04);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--font-montserrat);
-}
-
-p,
-span,
-a {
-  font-family: var(--font-open-sans);
-}
-
-*,
-*:before,
-*:after {
-  /* prevents padding from affecting height and width */
-  box-sizing: border-box;
-}
-
+[data-theme="dark"] {
+  --bg-primary: var(--primary-05);
+  --text-primary: var(--primary-01);
+  --bg-secondary: var(--primary-04);
+  --text-secondary: var(--primary-02);
+} */
+/* 
 .topper {
   font-size: var(--topperFontSize);
   line-height: 1.2em;
@@ -99,107 +87,209 @@ a {
   max-width: 40.625rem;
   margin: 0;
   color: var(--primary-dark);
+} */
+
+:root {
+  /* ============================================
+     BASE PALETTE - Warm & Earthy Throughout
+     ============================================ */
+  
+  /* Neutrals - Warm tones, never pure black/white */
+  --neutral-50: #F8F7F5;    /* Warm off-white with cream undertone */
+  --neutral-100: #F0EDE8;   /* Subtle warm background */
+  --neutral-200: #E3DED6;   /* Light warm gray */
+  --neutral-300: #D1CCC1;   /* Mid-light warm tone */
+  --neutral-400: #ADA79B;   /* Balanced warm gray */
+  --neutral-500: #837D72;   /* Mid warm gray */
+  --neutral-600: #5F5A51;   /* Deep warm gray */
+  --neutral-700: #46423B;   /* Darker warm tone */
+  --neutral-800: #2E2B26;   /* Rich warm near-black */
+  --neutral-900: #1F1D19;   /* Deepest warm tone */
+  --neutral-950: #16140F;   /* Near-black with warmth */
+  
+  /* Primary (Golden/Amber) - Earthy warmth */
+  --primary-50: #FDF9F0;    /* Warm cream */
+  --primary-100: #F9F0DC;   /* Light warm tint */
+  --primary-200: #F4DFB8;   /* Soft golden beige */
+  --primary-300: #ECC985;   /* Warm golden */
+  --primary-400: #E3B75A;   /* Rich golden */
+  --primary-500: #D4A136;   /* Deep amber */
+  --primary-600: #B8862A;   /* Warm ochre */
+  --primary-700: #8F6820;   /* Burnt amber */
+  --primary-800: #6B4F18;   /* Deep warm brown */
+  --primary-900: #3D2C0E;   /* Rich warm near-black */
+  
+  /* Secondary (Blue) - Warmer, less saturated */
+  --secondary-50: #F2F6F9;  /* Warm off-white with blue hint */
+  --secondary-100: #E5EDF4; /* Light warm blue-gray */
+  --secondary-200: #C7DCEA; /* Soft dusty blue */
+  --secondary-300: #9AC0DB; /* Muted sky blue */
+  --secondary-400: #6CA4C8; /* Warm medium blue */
+  --secondary-500: #4A89B0; /* Dusty deep blue */
+  --secondary-600: #3B7094; /* Rich warm blue */
+  --secondary-700: #2E5773; /* Deep blue-gray */
+  --secondary-800: #233F54; /* Dark warm blue */
+  --secondary-900: #18282E; /* Near-black with blue warmth */
+  
+  /* Accent - Terracotta/Rust for extra warmth */
+  --accent-rust-400: #D87C5A;
+  --accent-rust-500: #C4613F;
+  --accent-rust-600: #9D4D32;
+
+  --max-width: 80rem;
 }
 
-/* Add this as it's own dark.css file and linked on all pages */
-/*-- -------------------------- -->
-<---      Core Dark Styles      -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0rem) {
-  :root {
-    /* --dark: #082032; */
-    /* --medium: #2c394b; */
-    /* --accent: #334756; */
-    /* --bodyTextColorWhite: #fafbfc; */
-  }
-  body.dark-mode {
-    background-color: var(--primary-dark);
-  }
-  body.dark-mode p,
-  body.dark-mode li,
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3,
-  body.dark-mode h4,
-  body.dark-mode h5,
-  body.dark-mode h6,
-  body.dark-mode .title,
-  body.dark-mode .text,
-  body.dark-mode .li {
-    color: var(--primary-light);
-  }
-  body.dark-mode .light {
-    display: none;
-  }
-  body.dark-mode .dark {
-    display: block !important;
-  }
-  .dark {
-    /* class used to hide elements that only need to be seen when dark mode is enabled */
-    display: none;
-  }
+/* ============================================
+   LIGHT MODE THEME
+   ============================================ */
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-primary: var(--primary-200);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: var(--neutral-100);
+  --bg-elevated: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Text */
+  --text-primary: var(--neutral-950);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-500);
+  --text-inverse: var(--neutral-50);
+
+  /* Accents */
+  --accent-primary: var(--primary-500);
+  --accent-primary-hover: var(--primary-600);
+  --accent-primary-light: var(--primary-100);
+
+  --accent-secondary: var(--secondary-500);
+  --accent-secondary-hover: var(--secondary-600);
+  --accent-secondary-light: var(--secondary-100);
+
+  /* Borders */
+  --border-primary: var(--neutral-200);
+  --border-secondary: var(--neutral-100);
+  --border-focus: var(--primary-500);
+
+  /* States */
+  --state-hover: var(--neutral-100);
+  --state-active: var(--neutral-200);
+  --state-disabled: var(--neutral-300);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Specific use cases */
+  --code-bg: var(--neutral-100);
+  --code-text: var(--neutral-800);
+  --link-color: var(--secondary-600);
+  --link-hover: var(--secondary-700);
 }
-/*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #dark-mode-toggle .sun {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  body.dark-mode #dark-mode-toggle .moon {
-    transform: translate(-50%, -150%);
-    opacity: 0;
-  }
-  #dark-mode-toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 3.75rem;
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-  }
-  #dark-mode-toggle img,
-  #dark-mode-toggle svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1.5625rem;
-    height: 1.5625rem;
-    pointer-events: none;
-  }
-  #dark-mode-toggle .moon {
-    z-index: 2;
-    transition: transform 0.3s, opacity 0.3s, fill 0.3s;
-    fill: #000;
-  }
-  #dark-mode-toggle .sun {
-    z-index: 1;
-    transform: translate(-50%, 100%);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
-  }
+
+/* ============================================
+      DARK MODE THEME
+      ============================================ */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-primary: var(--neutral-950);
+  --bg-secondary: var(--neutral-900);
+  --bg-tertiary: var(--neutral-800);
+  --bg-elevated: var(--neutral-900);
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+
+  /* Text */
+  --text-primary: var(--primary-200);
+  --text-secondary: var(--neutral-400);
+  --text-tertiary: var(--neutral-500);
+  --text-inverse: var(--neutral-900);
+
+  /* Accents - Brighter for dark backgrounds */
+  --accent-primary: var(--primary-400);
+  --accent-primary-hover: var(--primary-300);
+  --accent-primary-light: var(--primary-900);
+
+  --accent-secondary: var(--secondary-400);
+  --accent-secondary-hover: var(--secondary-300);
+  --accent-secondary-light: var(--secondary-900);
+
+  /* Borders */
+  --border-primary: var(--neutral-800);
+  --border-secondary: var(--neutral-900);
+  --border-focus: var(--primary-400);
+
+  /* States */
+  --state-hover: var(--neutral-800);
+  --state-active: var(--neutral-700);
+  --state-disabled: var(--neutral-700);
+
+  /* Shadows - More subtle in dark mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7),
+    0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.9),
+    0 10px 10px -5px rgba(0, 0, 0, 0.7);
+
+  /* Specific use cases */
+  --code-bg: var(--neutral-900);
+  --code-text: var(--neutral-200);
+  --link-color: var(--secondary-400);
+  --link-hover: var(--secondary-300);
 }
-/* Desktop */
-@media only screen and (min-width: 64rem) {
-  #dark-mode-toggle {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    margin-left: 1.875rem;
-    margin-bottom: 0rem;
-  }
-  #dark-mode-toggle .moon {
-    /* change to whatever you need */
-    /* fill: #fff; */
-  }
+
+/* ============================================
+      USAGE EXAMPLES
+      ============================================ */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-montserrat);
+}
+
+p,
+span,
+a {
+  font-family: var(--font-open-sans);
+}
+
+*,
+*:before,
+*:after {
+  /* prevents padding from affecting height and width */
+  box-sizing: border-box;
+}
+
+/* ============================================
+      SEMANTIC COLOR HELPERS
+      ============================================ */
+
+:root {
+  --color-success: #22c55e;
+  --color-warning: var(--primary-500); /* Using your golden for warnings */
+  --color-error: #ef4444;
+  --color-info: var(--secondary-500); /* Using your blue for info */
+}
+
+[data-theme="dark"] {
+  --color-success: #4ade80;
+  --color-warning: var(--primary-400);
+  --color-error: #f87171;
+  --color-info: var(--secondary-400);
 }
