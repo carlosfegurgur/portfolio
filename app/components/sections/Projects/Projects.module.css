@@ -1,0 +1,30 @@
+.header {
+  composes: sectionHeader from "../../layout/Section/Section.module.css";
+}
+
+.headerTitle {
+  composes: sectionHeaderTitle from "../../layout/Section/Section.module.css";
+}
+
+.headerSubtitle {
+  composes: sectionHeaderSubtitle from "../../layout/Section/Section.module.css";
+}
+
+.content {
+  composes: sectionContent from "../../layout/Section/Section.module.css";
+  background-color: var(--bg-primary);
+  padding: 0;
+}
+
+.projectCardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 48rem) {
+  .projectCardGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

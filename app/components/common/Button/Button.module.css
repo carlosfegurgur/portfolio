@@ -1,0 +1,107 @@
+/* Base button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 0.5rem, 1rem);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-open-sans);
+}
+
+/* Button variants */
+.primary {
+  background-color: var(--btn-primary);
+  color: var(--btn-primary-text);
+}
+
+.primary:hover:not(.disabled) {
+  background-color: var(--btn-primary-hover);
+}
+
+.secondary {
+  background-color: var(--accent-secondary);
+  color: var(--neutral-01);
+}
+
+.secondary:hover:not(.disabled) {
+  background-color: var(--accent-secondary-hover);
+}
+
+.outline {
+  background-color: transparent;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.outline:hover:not(.disabled) {
+  background-color: rgba(241, 167, 14, 0.1);
+}
+
+.secondary-outline {
+  background-color: transparent;
+  border: 2px solid var(--secondary-03);
+  color: var(--secondary-03);
+}
+
+.secondary-outline:hover:not(.disabled) {
+  background-color: rgba(51, 139, 204, 0.1);
+}
+
+/* Button sizes */
+.sm {
+  /* padding: 0.375rem 0.75rem; */
+  line-height: 0.5rem;
+  font-size: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  /* font-size: 0.875rem; */
+}
+
+.md {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+.full {
+  width: 100%;
+}
+
+/* Disabled state */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Active state */
+.button:active:not(.disabled) {
+  transform: translateY(1px);
+}
+
+.buttonPrimary {
+  background-color: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+.buttonPrimary:hover {
+  background-color: var(--accent-cyan-dark);
+}
+
+.buttonSecondary {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.buttonSecondary:hover {
+  background-color: var(--bg-secondary);
+}

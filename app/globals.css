@@ -137,6 +137,11 @@
   --accent-rust-600: #9D4D32;
 
   --max-width: 80rem;
+  --navbar-height: 80px;
+  --section-padding: 25px;
+  --section-title-size: 2.5rem;
+  --section-subtitle-size: 1rem;
+  --tag-border-radius: 1rem;
 }
 
 /* ============================================
@@ -144,17 +149,32 @@
    ============================================ */
 [data-theme="light"] {
   /* Backgrounds */
-  --bg-primary: var(--primary-200);
+  --bg-primary: var(--primary-50);
   --bg-secondary: #ffffff;
   --bg-tertiary: var(--neutral-100);
-  --bg-elevated: #ffffff;
-  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-section: var(--neutral-100);
 
   /* Text */
   --text-primary: var(--neutral-950);
   --text-secondary: var(--neutral-600);
-  --text-tertiary: var(--neutral-500);
   --text-inverse: var(--neutral-50);
+
+  /* Buttons */
+  --btn-primary: var(--primary-600);
+  --btn-primary-hover: var(--primary-500);
+  --btn-primary-text: var(--neutral-950);
+
+  --btn-secondary: ;
+  --btn-secondary-hover: ;
+  --btn-secondary-text: ;
+
+  --btn-outline: ;
+  --btn-outline-hover: ;
+  --btn-outline-text: ;
+
+  --btn-ghost: ;
+  --btn-ghost-hover: ;
+  --btn-ghost-text: ;
 
   /* Accents */
   --accent-primary: var(--primary-500);
@@ -170,11 +190,6 @@
   --border-secondary: var(--neutral-100);
   --border-focus: var(--primary-500);
 
-  /* States */
-  --state-hover: var(--neutral-100);
-  --state-active: var(--neutral-200);
-  --state-disabled: var(--neutral-300);
-
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -183,12 +198,6 @@
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  /* Specific use cases */
-  --code-bg: var(--neutral-100);
-  --code-text: var(--neutral-800);
-  --link-color: var(--secondary-600);
-  --link-hover: var(--secondary-700);
 }
 
 /* ============================================
@@ -199,14 +208,29 @@
   --bg-primary: var(--neutral-950);
   --bg-secondary: var(--neutral-900);
   --bg-tertiary: var(--neutral-800);
-  --bg-elevated: var(--neutral-900);
-  --bg-overlay: rgba(0, 0, 0, 0.8);
+  --bg-section: var(--neutral-900);
 
   /* Text */
-  --text-primary: var(--primary-200);
+  --text-primary: var(--neutral-50);
   --text-secondary: var(--neutral-400);
-  --text-tertiary: var(--neutral-500);
   --text-inverse: var(--neutral-900);
+
+  /* Buttons */
+  --btn-primary: var(--primary-700);
+  --btn-primary-text: var(--neutral-50);
+  --btn-primary-hover: var(--primary-800);
+
+  --btn-secondary: ;
+  --btn-secondary-text: ;
+  --btn-secondary-hover: ;
+
+  --btn-outline: ;
+  --btn-outline-text: ;
+  --btn-outline-hover: ;
+
+  --btn-ghost: ;
+  --btn-ghost-text: ;
+  --btn-ghost-hover: ;
 
   /* Accents - Brighter for dark backgrounds */
   --accent-primary: var(--primary-400);
@@ -222,11 +246,6 @@
   --border-secondary: var(--neutral-900);
   --border-focus: var(--primary-400);
 
-  /* States */
-  --state-hover: var(--neutral-800);
-  --state-active: var(--neutral-700);
-  --state-disabled: var(--neutral-700);
-
   /* Shadows - More subtle in dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5),
@@ -235,12 +254,6 @@
     0 4px 6px -2px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.9),
     0 10px 10px -5px rgba(0, 0, 0, 0.7);
-
-  /* Specific use cases */
-  --code-bg: var(--neutral-900);
-  --code-text: var(--neutral-200);
-  --link-color: var(--secondary-400);
-  --link-hover: var(--secondary-300);
 }
 
 /* ============================================
@@ -253,6 +266,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -274,6 +288,8 @@ a {
 *:after {
   /* prevents padding from affecting height and width */
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* ============================================

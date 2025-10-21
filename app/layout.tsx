@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat, openSans } from "./fonts";
-import { Navbar } from "./components/layout/index";
-import { Footer } from "./components/layout/index";
+import { Navbar, Footer } from "./components/layout/index";
 import { ThemeProvider } from "./context/ThemeContext";
 
 export const metadata: Metadata = {

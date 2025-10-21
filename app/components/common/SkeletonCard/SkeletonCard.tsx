@@ -1,8 +1,8 @@
-import styles from '../bookCard/BookCard.module.css';
+import styles from '../SkeletonCard/SkeletonCard.module.css';
 
-export default function SkeletonBookCard() {
+export const SkeletonCard = () => {
   return (
-    <article className={`${styles['book-card']} ${styles.skeleton}`}>
+    <article className={`${styles.skeleton}`}>
       <div className={styles.skeletonCover}></div>
       <div className={styles.info}>
         <div className={styles.skeletonTitle}></div>

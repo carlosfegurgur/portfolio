@@ -1,0 +1,54 @@
+/* Skeleton-specific styles */
+.skeleton {
+    animation: pulse 1.5s infinite;
+  }
+  
+  .skeletonCover {
+    width: 100px;
+    height: 150px;
+    border-radius: 8px;
+    background-color: var(--neutral-100);
+  }
+  
+  .skeletonTitle,
+  .skeletonAuthor,
+  .skeletonRating,
+  .skeletonButton {
+    height: 16px;
+    border-radius: 4px;
+    background-color: var(--neutral-100);
+  }
+  
+  .skeletonTitle {
+    width: 70%;
+    margin-top: 8px;
+  }
+  
+  .skeletonAuthor {
+    width: 50%;
+  }
+  
+  .skeletonRating {
+    width: 60%;
+    margin-top: 12px;
+  }
+  
+  .skeletonButton {
+    width: 40%;
+    height: 32px;
+    margin-top: 16px;
+    border-radius: 8px;
+  }
+  
+  /* Subtle pulsing animation */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

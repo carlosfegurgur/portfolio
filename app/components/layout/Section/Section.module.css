@@ -1,0 +1,39 @@
+.sectionWrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-padding);
+  padding-top: calc(var(--section-padding) + 25px);
+}
+
+.sectionWrapper:first-of-type{
+  padding-top: calc(var(--navbar-height) + 40px);
+}
+
+.sectionHeader {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sectionHeaderTitle {
+  font-size: var(--section-title-size);
+  font-weight: 700;
+}
+
+.sectionHeaderSubtitle {
+  font-size: var(--section-subtitle-size);
+}
+
+.sectionContent {
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--bg-section);
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 48rem) {
+  .sectionContent {
+    padding: 1.5rem;
+  }
+}

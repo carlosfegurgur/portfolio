@@ -22,6 +22,19 @@
     flex-direction: column;
     gap: 3rem;
   }
+
+  #projects {
+    /* 116px - 164px top */
+    /* 60px - 100px  bottom */
+    padding: clamp(7.25rem, 16.82vw, 10.25rem) 1rem
+      clamp(3.75rem, 7.82vw, 6.25rem);
+    background-color: var(--primary-light);
+  }
+
+  .test {
+    border: 2px solid red;
+    margin-top: 30px;
+  }
 }
 
 /* Small Desktop - 1024px */
@@ -33,4 +46,9 @@
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+
+.header h1 {
+  font-size: 5rem;
 }
