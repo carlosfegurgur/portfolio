@@ -124,7 +124,7 @@ export const getBookData = (book: NotionBookData) => ({
   image:
     book.cover?.external?.url || book.cover?.file?.url || "/placeholder.jpg",
   imageAltText: `Cover of ${book.properties.Title.title[0]?.plain_text}`,
-  tags: book.properties.Genre.multi_select.map((g: any) => g.name),
+  tags: book.properties.Genre.multi_select.map((g) => g.name),
   links: [
     book.properties["Goodreads Link"]?.url || "",
     book.properties["My Review"]?.url || "",
@@ -142,7 +142,7 @@ export const getProjectData = (project: NotionProjectData) => ({
     project.cover?.file?.url ||
     "/placeholder.jpg",
   imageAltText: `Screenshot of ${project.properties.Title?.title[0]?.plain_text}`,
-  tags: project.properties.Technologies?.multi_select?.map((t: any) => t.name),
+  tags: project.properties.Technologies?.multi_select?.map((t) => t.name),
   links: [
     project.properties.Url?.url || "",
     project.properties.Repo?.url || "",

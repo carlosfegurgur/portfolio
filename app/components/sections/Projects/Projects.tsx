@@ -2,14 +2,14 @@ import { Section } from "../../layout/index";
 import styles from "./Projects.module.css";
 import { Card as ProjectCard } from "../../common";
 import { SkeletonCard } from "../../common/SkeletonCard/SkeletonCard";
-import { getAllProjects, getProjectData } from "@/app/utils/notionApi";
+import { getAllProjects, getProjectData, NotionProjectData } from "@/app/utils/notionApi";
 import { Suspense } from "react";
 
 const ProjectList = async () => {
   const projects = await getAllProjects();
   return (
     <>
-      {projects.map((project: any, index: number) => (
+      {projects.map((project: NotionProjectData, index: number) => (
         <ProjectCard {...getProjectData(project)} key={index} />
       ))}
     </>

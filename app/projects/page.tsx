@@ -1,5 +1,5 @@
 import { Section } from "../components/layout";
-import { getAllProjects, getProjectData } from "../utils/notionApi";
+import { getAllProjects, getProjectData, NotionProjectData } from "../utils/notionApi";
 import styles from "./projects.module.css";
 import { Card as ProjectCard } from "../components/common";
 import Link from "next/link";
@@ -9,7 +9,7 @@ const ProjectList = async () => {
   console.log('projects', projects)
   return (
     <>
-      {projects.map((project: any, index: number) => {
+      {projects.map((project: NotionProjectData, index: number) => {
         const { slug } = getProjectData(project);
         return (
           <Link id={slug} href={slug}>
