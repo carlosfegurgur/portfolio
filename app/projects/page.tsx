@@ -12,7 +12,7 @@ const ProjectList = async () => {
       {projects.map((project: NotionProjectData, index: number) => {
         const { slug } = getProjectData(project);
         return (
-          <Link id={slug} href={slug}>
+          <Link id={slug} href={slug} key={`${slug} - ${index}`}>
             <ProjectCard {...getProjectData(project)} key={index} />
           </Link>
         );
