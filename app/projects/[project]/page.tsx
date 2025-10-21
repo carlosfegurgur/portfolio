@@ -1,35 +1,33 @@
-// import styles from "../projects.module.css";
-// import { getAllProjects, getProjectData, NotionProjectData } from "@/app/utils/notionApi";
+import styles from "../projects.module.css";
+import { getAllProjects, getProjectData, NotionProjectData } from "@/app/utils/notionApi";
 
-// export default async function Project({
-//   params,
-// }: {
-//   params: {
-//     project: string;
-//   };
-// }) {
-//     console.log('project', params);
-//       // Fetch all projects
+export default async function Project({
+  params,
+}: {
+  params: {
+    project: string;
+  };
+}) {
+      // Fetch all projects
 //   const allProjects = await getAllProjects();
 //   console.log('all projects', allProjects)
   
-//   // Find the specific project by ID
+  // Find the specific project by ID
 //   const projectData = allProjects.find((p:NotionProjectData) => p.properties.Slug?.rich_text[0].plain_text === params.project);
-//   console.log('project data', projectData)
 
 //   const formattedData = getProjectData(projectData);
   
 //   if (!projectData) {
-//     return <div>Project not found</div>;
+    // return <div>Project not found</div>;
 //   }
-//   return (
-//     <div id={styles.project}>
-//       <div className={styles.container}>I am a project page for project {formattedData.title}!</div>
-//     </div>
-//   );
-// }
+  return (
+    <div id={styles.project}>
+      <div className={styles.container}>I am a project page for project!</div>
+    </div>
+  );
+}
 
-// // Generate paths for all projects at build time
+// Generate paths for all projects at build time
 // export async function generateStaticParams() {
 //   const projects = await getAllProjects();
 //   const projectSlugs: string[] = [];
