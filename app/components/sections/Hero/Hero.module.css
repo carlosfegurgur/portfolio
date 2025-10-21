@@ -1,0 +1,109 @@
+.wrapper {
+  composes: sectionWrapper from "../../layout/Section/Section.module.css";
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto 300px auto;
+  grid-template-rows: 300px auto;
+  grid-template-areas:
+    ". image ."
+    "content content content";
+}
+
+.image,
+.image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.image {
+  background-image: linear-gradient(
+    to top,
+    var(--bg-primary),
+    var(--bg-tertiary)
+  );
+  grid-area: image;
+}
+
+.content {
+  grid-area: content;
+  text-align: center;
+  align-self: start;
+  margin-top: 2rem;
+}
+
+.content p {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: var(--section-title-size);
+  letter-spacing: 1px;
+  line-height: 2rem;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: var(--section-subtitle-size);
+  font-family: var(--font-open-sans);
+  margin-top: 0.5rem;
+}
+
+.content .accent {
+  color: var(--primary-600);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media only screen and (min-width: 48rem) {
+  .wrapper {
+    height: auto;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "content image";
+  }
+  
+  .content {
+    text-align: left;
+  }
+
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 75rem) {
+  .wrapper {
+    grid-template-columns: 1fr 500px;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}

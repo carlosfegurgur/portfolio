@@ -1,0 +1,22 @@
+.header {
+  composes: sectionHeader from "../../layout/Section/Section.module.css";
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle {
+  composes: sectionHeaderTitle from "../../layout/Section/Section.module.css";
+}
+
+.headerSubtitle {
+  composes: sectionHeaderSubtitle from "../../layout/Section/Section.module.css";
+}
+
+.content {
+  composes: sectionContent from "../../layout/Section/Section.module.css";
+  border: 1px solid var(--text-primary);
+}
+
+.content a, .content button {
+  margin-top: 1rem;
+}

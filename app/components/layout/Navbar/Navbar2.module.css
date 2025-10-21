@@ -1,0 +1,143 @@
+/* Navigation List - Mobile First */
+.navList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 2rem var(--section-padding);
+  background-color: var(--bg-primary);
+  box-shadow: inset 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  
+  /* Hidden by default */
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.navList li {
+  transform: translateY(-70px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.9s ease;
+}
+
+/* Stagger animation for list items */
+.navList li:nth-child(1) { transition-delay: 0.05s; }
+.navList li:nth-child(2) { transition-delay: 0.1s; }
+.navList li:nth-child(3) { transition-delay: 0.15s; }
+.navList li:nth-child(4) { transition-delay: 0.2s; }
+
+/* Active state - menu open */
+.navigation.active .navList {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.navigation.active .navList li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Navigation Links */
+.navLink {
+  font-family: var(--font-montserrat);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+/* Theme Toggle */
+.themeToggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.themeToggle:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Menu Toggle */
+.mobileMenuToggle {
+  width: clamp(2.75rem, 6vw, 3rem);
+  height: clamp(2.75rem, 6vw, 3rem);
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 48rem) {
+  .mobileMenuToggle {
+    display: none;
+  }
+
+  .navList {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    
+    /* Always visible on desktop */
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  .navList li {
+    transform: translateY(0);
+    opacity: 1;
+    transition: none;
+  }
+
+  .navLink {
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+
+  .navLink:hover {
+    transform: scale(1.05);
+  }
+
+  /* Underline animation */
+  .navLink::before {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-500);
+    transition: width 0.3s ease;
+  }
+
+  .navLink:hover::before,
+  .navLink.active::before {
+    width: 100%;
+  }
+}
