@@ -1,22 +1,34 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
-export type Theme = 'light' | 'dark';
+type Theme = 'light' | 'dark';
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const systemTheme = localStorage.getItem('theme') as Theme;
-    return systemTheme || 'dark';
-  });
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [mounted, setMounted] = useState(false);
+
+  // Set mounted on client side
+  useEffect(() => {
+    setMounted(true);
+    
+    // Check system preference on mount
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches 
+      ? 'dark' 
+      : 'light';
+    setTheme(systemTheme);
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+    
     const root = document.documentElement;
     root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  return { theme, toggleTheme };
+  return { theme, toggleTheme, mounted };
 }
