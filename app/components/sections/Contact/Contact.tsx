@@ -61,6 +61,7 @@ export function Contact() {
               name="email"
               id="email"
               value={formData.email}
+              required
               onChange={handleChange}
             />
           </label>
@@ -80,6 +81,7 @@ export function Contact() {
               name="message"
               id="message"
               value={formData.message}
+              required
               onChange={handleChange}
             ></textarea>
           </label>

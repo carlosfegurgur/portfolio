@@ -38,6 +38,7 @@
   border-radius: 0.5rem;
   border: none;
   background-color: var(--bg-section);
+  color: var(--text-primary);
 }
 
 .contactForm textarea {
